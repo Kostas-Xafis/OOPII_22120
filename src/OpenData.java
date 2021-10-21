@@ -12,7 +12,7 @@ public class OpenData {
     public static void queryCity(String city){
         try{
             URL url = new URL(baseUrl + "action=query&srsearch=England&format=json");
-            // mapper.readValue(url, WikiData.class);
+            //  mapper.readValue(url, WikiData.class);
             System.out.println(url + url.toString());
         } catch(MalformedURLException err){
             System.out.println("URL error:" + err);
