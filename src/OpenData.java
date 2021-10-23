@@ -1,4 +1,5 @@
 package src;
+
 import java.io.IOException;
 import java.net.URL;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,7 +18,7 @@ public class OpenData {
 	public static void RetrieveData(String city, String country) throws  IOException {
 		OpenWeatherMap weather_obj = RetrieveWeatherData(city, country);
 		MediaWiki mediaWiki_obj =  RetrieveWikiData(city);
-		City.extractData(weather_obj, mediaWiki_obj);
+		City.extractData(weather_obj, mediaWiki_obj, city);
 	}
 	public static OpenWeatherMap RetrieveWeatherData(String city, String country) throws IOException{
 		return mapper.readValue(new URL("http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&APPID="+weather_api_key+""), OpenWeatherMap.class);

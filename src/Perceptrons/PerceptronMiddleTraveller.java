@@ -3,18 +3,19 @@ package src.Perceptrons;
 import java.util.ArrayList;
 import src.City;
 
-public class PerceptronYoungTraveller implements PerceptronTraveller{
+public class PerceptronMiddleTraveller implements PerceptronTraveller{
     private static double[] weightBias = new double[]{.4, .8, .2, .1, .3, -.2, .4, .7, -.3, -.5};
     private City percCity; //Perceptron's city
     private ArrayList<City> recommendations;
 
-    public PerceptronYoungTraveller(City perc_city){
+    public PerceptronMiddleTraveller(City perc_city){
         this.percCity = perc_city;
     }
 
     public ArrayList<City> getRecommendations(){
         return this.recommendations;
     }
+
     @Override
     public void setRecommendations(ArrayList<City> recommendations) {
         this.recommendations = recommendations;
@@ -44,17 +45,16 @@ public class PerceptronYoungTraveller implements PerceptronTraveller{
     @Override
     public ArrayList<City> recommend(){
         double[] res = new double[10];
-        ArrayList<City> recommendations = new ArrayList<City>();
+        ArrayList<City> recommendedCities = new ArrayList<City>();
         int j = 0;
         for(City city : City.Cities){
             double[] dt = city.compareDistance(this.percCity).getNormData();
             int i = 0;
             for(double val : dt) res[j] += val * weightBias[i++];
-            if(res[j] > 0) recommendations.add(city);
-            System.out.println("Weighted sum " + j + ": " + res[j]);
+            if(res[j] > 0) recommendedCities.add(city);
             ++j;
         }
-        return recommendations;
+        return recommendedCities;
     }
 
     @Override
