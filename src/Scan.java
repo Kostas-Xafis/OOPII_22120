@@ -55,7 +55,7 @@ public class Scan {
         //since everything is converted to text
         System.out.print(msg);
         String s = inp.nextLine();
-        if(strict && s.matches(".*(\\d|[^\\w\\n]).*")){ //Contains a number or a special character
+        if(strict && s.matches(".*(\\d|[^ \\w\\n]).*")){ //Contains a number or a special character
             System.out.println("This field can not contain numbers or special characters\n");
             return scanString(msg, strict);
         }

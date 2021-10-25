@@ -7,7 +7,9 @@ import src.wikipedia.MediaWiki;
 
 public class City {
     private static final String[] features = new String[]{"cafe", "sea", "museum", "restaurant", "stadium", "culture", "transport", "temp", "clouds", "dist"};
+    private static final String[] features_plural = new String[]{"cafes", "seas", "museums", "restaurants", "stadiums", "cultures", "transports"};
     private static final double maxdist = geodesic_distance(new double[]{0, 0}, new double[]{0, 180});
+    
     public static ArrayList<City> Cities = new ArrayList<City>();
     private double[] norm_data;
     private double[] coords;
@@ -47,37 +49,49 @@ public class City {
     public static double getMaxDist(){
         return City.maxdist;
     }
-
         /*-------------------------------
           Data Collection & Normalization
           -------------------------------*/
     public static void extractData(OpenWeatherMap weather, MediaWiki wiki, String city_name)throws IOException{
-        String wikistr = wiki.getQuery().getPages().get(0).getExtract();
         double[][] data = new double[10][3];
         double[] coords = new double[]{weather.getCoord().getLat(), weather.getCoord().getLon()};
-        for(int i = 0; i < 7; i++){ //Setting the feature's data 
-            int len = wikistr.split(" " + features[i] + "( |s|\\.)").length; //the feature's name + plural form
-            data[i][0] = len > 10 ? 10 : len;
+        int[] featuresCount = getWords(wiki.getQuery().getPages().get(0).getExtract());
+        for(int i = 0; i < 7; i++){ //Setting the feature's data:[value, max, min]
+            data[i][0] = featuresCount[i] > 10 ? 10 : featuresCount[i];
             data[i][1] = 10;
             data[i][2] = 0;
         }
 
         data[7] = new double[]{weather.getMain().getTemp(), weather.getMain().getTempMax(), weather.getMain().getTempMin()};
         data[8] = new double[]{weather.getClouds().getAll(), 100, 0};
-        data[9] = new double[]{0, 1, 0}; //Default 0 if the use hasn't given his location yet
+        data[9] = new double[]{0, 1, 0}; //Defaults 0 for now until the user give a location
 
-        normalizeData(data, coords, city_name);
+        double[] normalized_data = normalizeData(data);
+        Cities.add(new City(normalized_data, coords, city_name));
     }
 
         
-    private static void normalizeData(double[][] data, double[] coords, String city_name){
+    private static double[] normalizeData(double[][] data){
         double[] normalized_values = new double[10];
         for(int i = 0; i < 10; i++){
             double[] temp = data[i];
             normalized_values[i] = (temp[0] - temp[2]) 
                                     / (temp[1] - temp[2]);
         }
-        Cities.add(new City(normalized_values, coords, city_name));
+        return normalized_values;
+    }
+
+    private static int[] getWords(String article){//Didn't manage to do it with regex :(
+        int[] word_count = new int[7];
+        String[] words =  article.split("\\w+");
+        for(int i = 0; i < 7; i++){
+            int s = 0;
+            for(int j = 0; j < words.length; j++){
+                s += (words[j].equals(features[i]) || words[j].equals(features_plural[i])) ? 1 : 0;
+            }
+            word_count[i] = s; 
+        }
+        return word_count;
     }
         /*------------------
           Distance Functions

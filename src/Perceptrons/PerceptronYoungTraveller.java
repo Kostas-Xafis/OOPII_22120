@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import src.City;
 
 public class PerceptronYoungTraveller implements PerceptronTraveller{
-    private static double[] weightBias = new double[]{.4, .8, .2, .1, .3, -.2, .4, .7, -.3, -.5};
+    private static double[] weightBias = new double[]{.4, .6, -.2, -.3, .2, -.1, .4, .5, -.3, -.6};
     private City percCity; //Perceptron's city
     private ArrayList<City> recommendations;
-
+        /*-----------
+          Constructor
+          -----------*/
     public PerceptronYoungTraveller(City perc_city){
         this.percCity = perc_city;
     }
-
+        /*---------------
+          Getters/Setters
+          ---------------*/
     public ArrayList<City> getRecommendations(){
         return this.recommendations;
     }
@@ -23,24 +27,9 @@ public class PerceptronYoungTraveller implements PerceptronTraveller{
     public City getPercCity(){
         return this.percCity;
     }
-
-    public static City getClosestCity(PerceptronTraveller perc){
-        double min = City.getMaxDist();
-        City closest_city = null;
-        City percCity = ((PerceptronYoungTraveller) perc).getPercCity();
-        ArrayList<City> recommendations = ((PerceptronYoungTraveller) perc).getRecommendations();
-
-        for(City city: recommendations){
-            double temp_dist = City.geodesic_distance(city.getCoords(), percCity.getCoords()); 
-            if(min > temp_dist){
-                min = temp_dist;
-                closest_city = city;
-            }
-        }
-        System.out.println("Closest city in recommendations: " + closest_city.getName());
-        return closest_city;
-    }
-
+        /*---------------
+          Recommendations
+          ---------------*/
     @Override
     public ArrayList<City> recommend(){
         double[] res = new double[10];
