@@ -19,12 +19,11 @@ public class PerceptronMiddleTraveller implements PerceptronTraveller{
     public ArrayList<City> getRecommendations(){
         return this.recommendations;
     }
-    
+
     public City getPercCity(){
         return this.percCity;
     }
-    
-    @Override
+
     public void setRecommendations(ArrayList<City> recommendations) {
         this.recommendations = recommendations;
     }
@@ -44,6 +43,7 @@ public class PerceptronMiddleTraveller implements PerceptronTraveller{
             System.out.println("Weighted sum " + j + ": " + res[j]);
             ++j;
         }
+        this.recommendations = recommendations;
         return recommendedCities;
     }
 

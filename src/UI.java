@@ -71,7 +71,6 @@ public class UI {
             if(letter_case.equals("U") || letter_case.equals("u")) recommendations = perc.recommend(true);
             else if(letter_case.equals("L") || letter_case.equals("l")) recommendations = perc.recommend(false);
             else recommendations = perc.recommend();
-            perc.setRecommendations(recommendations);
                 //Print recommendations
             System.out.println("Recommendations: \n");
             for(City city: recommendations){
@@ -108,5 +107,5 @@ public class UI {
         String cityname = Scan.scanString(user_city ? "Give your city's name: ": "Type a city's name: ", true);
         String countryInitial = Scan.scanString("And the country's initial (uk, gr etc): ", true);
         return new String[]{cityname, countryInitial};
-    }   
+    }
 }

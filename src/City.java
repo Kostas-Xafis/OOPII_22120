@@ -69,7 +69,6 @@ public class City {
         double[] normalized_data = normalizeData(data);
         Cities.add(new City(normalized_data, coords, city_name));
     }
-
         
     private static double[] normalizeData(double[][] data){
         double[] normalized_values = new double[10];

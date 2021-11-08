@@ -19,7 +19,7 @@ public class PerceptronYoungTraveller implements PerceptronTraveller{
     public ArrayList<City> getRecommendations(){
         return this.recommendations;
     }
-    @Override
+
     public void setRecommendations(ArrayList<City> recommendations) {
         this.recommendations = recommendations;
     }
@@ -43,6 +43,7 @@ public class PerceptronYoungTraveller implements PerceptronTraveller{
             System.out.println("Weighted sum " + j + ": " + res[j]);
             ++j;
         }
+        this.setRecommendations(recommendations);
         return recommendations;
     }
 
