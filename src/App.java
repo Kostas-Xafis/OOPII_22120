@@ -1,16 +1,12 @@
 package src;
 
-import java.io.IOException;
+/**Class Desciption
+ *@author Konstantinos Xafis it22120
+ *@version 1.0
+ *@since 21-10-2021*/
 public class App{
-    public static void main(String[] args) throws IOException {
-        // Add dummy cities for testing
-        OpenData.RetrieveData("New York City", "us");
-        OpenData.RetrieveData("Athens", "gr");
-        OpenData.RetrieveData("London", "uk");
-        OpenData.RetrieveData("Paris", "fr");
-        OpenData.RetrieveData("Tokyo", "jp");
-        OpenData.RetrieveData("Beijing", "cn");
-        OpenData.RetrieveData("California", "us");
+    /** Main function */
+    public static void main(String[] args) {
         UI.init();
     }
 }
