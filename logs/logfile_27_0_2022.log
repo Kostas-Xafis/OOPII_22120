@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-01-26T22:23:13.088997100Z</date>
+  <millis>1643235793088</millis>
+  <nanos>997100</nanos>
+  <sequence>0</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>1</thread>
+  <message>============Program Started==============</message>
+</record>
+<record>
+  <date>2022-01-26T22:23:13.554897200Z</date>
+  <millis>1643235793554</millis>
+  <nanos>897200</nanos>
+  <sequence>1</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>1</thread>
+  <message>Creating dummy cities since none were found.</message>
+</record>
+<record>
+  <date>2022-01-26T22:23:13.599214600Z</date>
+  <millis>1643235793599</millis>
+  <nanos>214600</nanos>
+  <sequence>2</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>FINE</level>
+  <class>main.Logs</class>
+  <method>fine</method>
+  <thread>1</thread>
+  <message>Cities data were successfully loaded</message>
+</record>
+<record>
+  <date>2022-01-26T22:26:24.825630200Z</date>
+  <millis>1643235984825</millis>
+  <nanos>630200</nanos>
+  <sequence>3</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>31</thread>
+  <message>User gave invalid input at the UserPreferences fields.</message>
+</record>
+<record>
+  <date>2022-01-26T22:27:07.004173Z</date>
+  <millis>1643236027004</millis>
+  <nanos>173000</nanos>
+  <sequence>4</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>31</thread>
+  <message>User gave invalid input at the UserPreferences fields.</message>
+</record>
+<record>
+  <date>2022-01-26T22:27:23.670816Z</date>
+  <millis>1643236043670</millis>
+  <nanos>816000</nanos>
+  <sequence>5</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>31</thread>
+  <message>User gave invalid input for the city's fields</message>
+</record>
+<record>
+  <date>2022-01-26T22:27:42.291811600Z</date>
+  <millis>1643236062291</millis>
+  <nanos>811600</nanos>
+  <sequence>6</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>31</thread>
+  <message>User gave invalid input for the city's fields</message>
+</record>
+<record>
+  <date>2022-01-26T22:27:56.086313800Z</date>
+  <millis>1643236076086</millis>
+  <nanos>313800</nanos>
+  <sequence>7</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>137</thread>
+  <message>Open Weather Data API could not find Boat,Loa city</message>
+</record>
+<record>
+  <date>2022-01-26T22:32:29.644672Z</date>
+  <millis>1643236349644</millis>
+  <nanos>672000</nanos>
+  <sequence>8</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>FINE</level>
+  <class>main.Logs</class>
+  <method>fine</method>
+  <thread>231</thread>
+  <message>Successfully added Puerto Rico,PR city</message>
+</record>
+<record>
+  <date>2022-01-26T22:34:07.485995300Z</date>
+  <millis>1643236447485</millis>
+  <nanos>995300</nanos>
+  <sequence>9</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>FINE</level>
+  <class>main.Logs</class>
+  <method>fine</method>
+  <thread>252</thread>
+  <message>Successfully added Istanbul,TR city</message>
+</record>
+<record>
+  <date>2022-01-26T22:34:31.355378300Z</date>
+  <millis>1643236471355</millis>
+  <nanos>378300</nanos>
+  <sequence>10</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>31</thread>
+  <message>User requested for recommendations with empty age field</message>
+</record>
+<record>
+  <date>2022-01-26T22:34:36.090519500Z</date>
+  <millis>1643236476090</millis>
+  <nanos>519500</nanos>
+  <sequence>11</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>SEVERE</level>
+  <class>main.Logs</class>
+  <method>severe</method>
+  <thread>31</thread>
+  <message>JSON error while rewriting to file</message>
+</record>
+<record>
+  <date>2022-01-26T22:34:36.090519500Z</date>
+  <millis>1643236476090</millis>
+  <nanos>519500</nanos>
+  <sequence>12</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>31</thread>
+  <message>============ Program Ended ==============</message>
+</record>
+</log>

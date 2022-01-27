@@ -1,0 +1,24 @@
+package citySorters;
+
+import java.util.Comparator;
+
+import main.City;
+
+/**
+ * Ascending order sort of the geodesic distance
+ *@author Konstantinos Xafis it22120
+ *@version 1.0
+ *@since 10-07-2021*/
+public class ascGeoDist implements Comparator<City>{
+
+    /**
+     * Compares the geodesic distance of 2 cities
+     *@param c1 Compared city 1
+     *@param c2 Compared city 2
+     *@return Returns 1 if the c1 geodesic distance is bigger than c2 else -1*/
+    @Override
+    public int compare(City c1, City c2){
+        return c1.getNormData()[9] > c2.getNormData()[9] ? 1 : -1;
+    }
+
+}
