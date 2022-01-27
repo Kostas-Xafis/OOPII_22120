@@ -102,13 +102,13 @@ public class PerceptronMiddleTraveller implements PerceptronTraveller{
             }
 
             if(res > 0) {
-                citiesProduct.put(c.getName()+c.getCountryInitials(), res);
+                citiesProduct.put(c.getName()+c.getInitials(), res);
                 return true;
             }
             return false;
         }).max((City c1, City c2) -> {
-            double product1 = citiesProduct.get(c1.getName()+c1.getCountryInitials());
-            double product2 = citiesProduct.get(c2.getName()+c2.getCountryInitials());
+            double product1 = citiesProduct.get(c1.getName()+c1.getInitials());
+            double product2 = citiesProduct.get(c2.getName()+c2.getInitials());
             return product1 > product2 ? 1 : -1;
         });
 

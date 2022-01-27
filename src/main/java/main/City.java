@@ -45,7 +45,7 @@ public class City {
     public City(String name, String initials) {
         this.timestamp = (Long) new Date().getTime(); //remove millis
         this.name = name;
-        this.initials = initials.toLowerCase();
+        this.initials = initials;
         City dupCity = getCity(name, this.initials);
         if(dupCity != null) {
             System.out.println("Date registered: " + new Date(dupCity.timestamp).toString() + "\n");
@@ -95,7 +95,7 @@ public class City {
 
     /**Getter
      *@return Returns the name of the city with upper/lower case if specified */
-    public String getCountryInitials(){
+    public String getInitials(){
         return this.letterCase == null ? this.initials : (this.letterCase == true ? this.initials.toUpperCase() : this.initials.toLowerCase());
     }
 

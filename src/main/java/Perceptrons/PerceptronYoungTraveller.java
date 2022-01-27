@@ -63,12 +63,12 @@ public class PerceptronYoungTraveller implements PerceptronTraveller{
         double res = 0;
         ArrayList<City> recommendedCities = new ArrayList<City>();
 
-        for(City c : City.Cities.values()){
+        for (City c: City.Cities.values()) {
             if(this.percCity.equals(c)) continue;
             res = 0;
             double[] dt = c.compareDistance(this.percCity).getNormData();
-            int i = 0;
-            for(double val : dt) res += val * weightBias[i++];
+            int j = 0;
+            for(double val : dt) res += val * weightBias[j++];
 
             if(res > 0) recommendedCities.add(c);
         }
@@ -100,13 +100,13 @@ public class PerceptronYoungTraveller implements PerceptronTraveller{
             }
 
             if(res > 0) {
-                citiesProduct.put(c.getName()+c.getCountryInitials(), res);
+                citiesProduct.put(c.getName()+c.getInitials(), res);
                 return true;
             }
             return false;
         }).max((City c1, City c2) -> {
-            double product1 = citiesProduct.get(c1.getName()+c1.getCountryInitials());
-            double product2 = citiesProduct.get(c2.getName()+c2.getCountryInitials());
+            double product1 = citiesProduct.get(c1.getName()+c1.getInitials());
+            double product2 = citiesProduct.get(c2.getName()+c2.getInitials());
             return product1 > product2 ? 1 : -1;
         });
 

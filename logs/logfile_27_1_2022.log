@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-01-27T01:16:48.148854300Z</date>
-  <millis>1643246208148</millis>
-  <nanos>854300</nanos>
+  <date>2022-01-27T11:29:10.369929400Z</date>
+  <millis>1643282950369</millis>
+  <nanos>929400</nanos>
   <sequence>0</sequence>
   <logger>java.util.logging.Logger</logger>
   <level>INFO</level>
@@ -14,9 +14,9 @@
   <message>============Program Started==============</message>
 </record>
 <record>
-  <date>2022-01-27T01:16:48.657708500Z</date>
-  <millis>1643246208657</millis>
-  <nanos>708500</nanos>
+  <date>2022-01-27T11:29:10.849939100Z</date>
+  <millis>1643282950849</millis>
+  <nanos>939100</nanos>
   <sequence>1</sequence>
   <logger>java.util.logging.Logger</logger>
   <level>FINE</level>
@@ -26,10 +26,22 @@
   <message>Cities data were successfully loaded</message>
 </record>
 <record>
-  <date>2022-01-27T01:16:52.756773700Z</date>
-  <millis>1643246212756</millis>
-  <nanos>773700</nanos>
+  <date>2022-01-27T11:29:17.205342400Z</date>
+  <millis>1643282957205</millis>
+  <nanos>342400</nanos>
   <sequence>2</sequence>
+  <logger>java.util.logging.Logger</logger>
+  <level>INFO</level>
+  <class>main.Logs</class>
+  <method>info</method>
+  <thread>18</thread>
+  <message>User requested for recommendations.</message>
+</record>
+<record>
+  <date>2022-01-27T11:29:18.781482600Z</date>
+  <millis>1643282958781</millis>
+  <nanos>482600</nanos>
+  <sequence>3</sequence>
   <logger>java.util.logging.Logger</logger>
   <level>FINE</level>
   <class>main.Logs</class>
@@ -38,10 +50,10 @@
   <message>Cities data were successfully stored</message>
 </record>
 <record>
-  <date>2022-01-27T01:16:52.757793600Z</date>
-  <millis>1643246212757</millis>
-  <nanos>793600</nanos>
-  <sequence>3</sequence>
+  <date>2022-01-27T11:29:18.781482600Z</date>
+  <millis>1643282958781</millis>
+  <nanos>482600</nanos>
+  <sequence>4</sequence>
   <logger>java.util.logging.Logger</logger>
   <level>INFO</level>
   <class>main.Logs</class>

@@ -263,7 +263,7 @@ public class Recommendations extends JPanel {
             setLayout(new GridBagLayout());
             for (int i = 0; i < cities.size(); i++) {
                 City city = cities.get(i);
-                JLabel cityLabel = new JLabel(city.getName() + ", " + city.getCountryInitials());
+                JLabel cityLabel = new JLabel(city.getName() + ", " + city.getInitials());
 
                 g.addElementToGrid(this, cityLabel, (int) (i/5), i%5, 1, 1, GridBagConstants.NORTH, GridBagConstants.BOTH, 1, 1);
                 cityLabel.setFont(cityLabel.getFont().deriveFont(24f));
