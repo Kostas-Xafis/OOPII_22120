@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-01-26T23:03:03.180692300Z</date>
-  <millis>1643238183180</millis>
-  <nanos>692300</nanos>
+  <date>2022-01-27T01:16:48.148854300Z</date>
+  <millis>1643246208148</millis>
+  <nanos>854300</nanos>
   <sequence>0</sequence>
   <logger>java.util.logging.Logger</logger>
   <level>INFO</level>
@@ -14,9 +14,9 @@
   <message>============Program Started==============</message>
 </record>
 <record>
-  <date>2022-01-26T23:03:03.718906900Z</date>
-  <millis>1643238183718</millis>
-  <nanos>906900</nanos>
+  <date>2022-01-27T01:16:48.657708500Z</date>
+  <millis>1643246208657</millis>
+  <nanos>708500</nanos>
   <sequence>1</sequence>
   <logger>java.util.logging.Logger</logger>
   <level>FINE</level>
@@ -26,26 +26,27 @@
   <message>Cities data were successfully loaded</message>
 </record>
 <record>
-  <date>2022-01-26T23:03:18.612432200Z</date>
-  <millis>1643238198612</millis>
-  <nanos>432200</nanos>
+  <date>2022-01-27T01:16:52.756773700Z</date>
+  <millis>1643246212756</millis>
+  <nanos>773700</nanos>
   <sequence>2</sequence>
   <logger>java.util.logging.Logger</logger>
   <level>FINE</level>
   <class>main.Logs</class>
   <method>fine</method>
-  <thread>91</thread>
-  <message>Successfully added Tokyo,JP city</message>
+  <thread>18</thread>
+  <message>Cities data were successfully stored</message>
 </record>
 <record>
-  <date>2022-01-26T23:04:13.721150400Z</date>
-  <millis>1643238253721</millis>
-  <nanos>150400</nanos>
+  <date>2022-01-27T01:16:52.757793600Z</date>
+  <millis>1643246212757</millis>
+  <nanos>793600</nanos>
   <sequence>3</sequence>
   <logger>java.util.logging.Logger</logger>
   <level>INFO</level>
   <class>main.Logs</class>
   <method>info</method>
   <thread>18</thread>
-  <message>User tried to add an already registered city</message>
+  <message>============ Program Ended ==============</message>
 </record>
+</log>

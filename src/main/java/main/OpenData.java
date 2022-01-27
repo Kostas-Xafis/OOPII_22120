@@ -28,7 +28,7 @@ public class OpenData {
 	private static String weather_api_key = "6c0c23031468c1ee225c8b935c579b64";
 	private static ObjectMapper mapper = new ObjectMapper();
 
-    private ExecutorService executor = Executors.newFixedThreadPool(4);
+    private ExecutorService executor = Executors.newFixedThreadPool(3);
 
     private String city;
     private String initials;
@@ -75,16 +75,12 @@ public class OpenData {
         try {
             wikiData = wikiFuture.get(5, TimeUnit.SECONDS);
             weatherData = weatherFuture.get(5, TimeUnit.SECONDS);
-            executor.submit(new Callable<Void>() {
-                @Override
-                public Void call() throws Exception {
-                    while(!wikiFuture.isDone() && !weatherFuture.isDone()){
-                        wait(50);
-                    }
-                    onExecutionEnd.accept(null);
-                    return null;
-                }
-            });
+
+            while(!wikiFuture.isDone() && !weatherFuture.isDone()){
+                wait(50);
+            }
+            onExecutionEnd.accept(null);
+
         } catch (InterruptedException|ExecutionException|TimeoutException e){
             executor.shutdownNow();
             if(e.getClass().equals(ExecutionException.class)) {
@@ -173,8 +169,7 @@ public class OpenData {
 
         @Override
         public MediaWiki call() throws WikiArticleNotFoundException {
-            MediaWiki wiki = RetrieveWikiData();
-            return wiki;
+            return RetrieveWikiData();
         }
     }
 

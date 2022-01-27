@@ -10,7 +10,8 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-src/main/webapp
+src/main/webapp/
+logs/
 
 #
 # Visual Studio Code
@@ -22,3 +23,4 @@ src/main/webapp
 .vscode/
 .apt_generated/
 .apt_generated_tests/
+
